@@ -9,5 +9,5 @@
     apt: upgrade=dist
     register: apt_result
   - name: Remove old packages
-    shell: apt-get autoremove
+    shell: apt-get -y autoremove
     register: apt_result
