@@ -4,6 +4,5 @@
   remote_user: "{{user}}"
   become: true
   become_user: root
-
-  roles:
-    - upgrade
+  apt: update_cache=yes
+  apt: upgrade=dist
