@@ -4,5 +4,10 @@
   tasks:
   - name: Update apt
     apt: update_cache=yes
+    register: apt_result
   - name: Make a general dist-upgrade
     apt: upgrade=dist
+    register: apt_result
+  - name: Remove old packages
+    shell: apt-get autoremove
+    register: apt_result
