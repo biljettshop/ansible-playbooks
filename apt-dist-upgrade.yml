@@ -1,5 +1,9 @@
-# Run the equivalent of "apt-get update" as a separate step
-- apt: update_cache=yes
+---
+- name: Upgrades and Dist-Upgrades servers
+  hosts: all
+  remote_user: "{{user}}"
+  become: true
+  become_user: root
 
-# Update all packages to the latest version
-- apt: upgrade=dist
+  roles:
+    - upgrade
