@@ -3,10 +3,10 @@
   hosts: all
   tasks:
   - name: Update apt
-    apt: update_cache=yes
+    shell: apt-get -y update
     register: apt_result
   - name: Make a general dist-upgrade
-    apt: upgrade=dist
+    shell: apt-get -y dist-upgrade
     register: apt_result
   - name: Remove old packages
     shell: apt-get -y autoremove
