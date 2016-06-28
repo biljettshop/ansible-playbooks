@@ -4,5 +4,8 @@
   remote_user: "{{user}}"
   become: true
   become_user: root
-  apt: update_cache=yes
-  apt: upgrade=dist
+  tasks:
+  - name: Update apt
+    apt: update_cache=yes
+  - name: Make a general dist-upgrade
+    apt: upgrade=dist
